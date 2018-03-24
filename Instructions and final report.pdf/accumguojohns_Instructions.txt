@@ -1,0 +1,78 @@
+﻿Steps for creating and running the project:
+1. Execute  accumguojohns_addedFKconstraints.sql to create the schema of ‘accumguojohns’ which includes all the data and tables used within the project.
+2. Execute create_guest.sql to be able to log into the database as a guest, using the username: guest and the password: guest_user, otherwise use root user and root user password to login as DBA.
+3. Run db.jar file within command prompt to access front end of the project.
+   1. Enter username and password when prompted.
+      1. Guest Account:
+         1. Username: guest
+         2. Password: guest_account
+      1. DBA 
+         1. Username: root
+         2. The same password as used to login as a root user
+1. As DBA enter one of the following:
+   1. Q -- to enter a SQL statement
+   2. P -- to view pending approvals
+      1. E -- to show guest_user requests to edit a paper
+      2. A -- to show guest_user requests to add an article
+      3. K -- to show guest_user requests to add a keyword
+      4. P -- to show guest_user requests to add a paper
+      5. D -- to show guest_user requests to delete a paper
+   1. A -- to perform admin functions
+      1. A -- add an article
+         1. Follow steps on screen to add an article to the database.
+      1. P -- add a paper
+         1. Follow steps on screen to add a paper to the database.
+      1. D -- delete a paper
+         1. Follow steps on screen to delete a paper from the database.
+            1. Triggers will be activated here to delete corresponding journals, articles, and authors.
+      1. K -- add a keyword
+         1. Follow the steps on the screen to add a keyword with a corresponding paper_id to the database.
+      1. C -- add a citation
+         1. Follow the steps on the screen to add a citation with a corresponding paper_id to the database.
+   1. Z -- to quit
+1. As a guest_user:
+   1. Q -- to enter a query
+      1. P -- to query for a paper
+         1. T -- to query a paper by the paper’s title
+            1. Follow steps on screen to continue
+         1. A -- to query a paper by the paper’s author
+            1. Follow steps on screen to continue
+         1. K -- to query a paper by a keyword
+            1. Follow steps on screen to continue
+         1. J -- to query a paper by a journal
+            1. Follow steps on screen to continue
+      1. Au -- to query for an author
+         1. Enter author’s name to get information about them
+      1. Art -- to query for an article
+         1. T -- query an article by it’s title
+            1. Follow steps on screen to continue
+         1. W -- query an article by it’s writer
+            1. Follow steps on screen to continue
+         1. P -- query an article by the paper(s) it cites
+            1. Follow steps on screen to continue
+   1. R -- to request an update
+      1. D -- request to delete a paper
+         1. Enter the paper_id of which paper is to be looked at for deletion
+         2. Enter the reason for deletion of said paper
+      1. I -- request to insert a paper or an article
+         1. A -- request to add an article
+            1. Follow steps on screen to complete suggestion
+         1. P -- request to add a paper
+            1. Follow steps on screen to complete suggestion
+      1. K -- request adding a keyword to a paper
+         1. Enter the paper_id of which paper you want to add a keyword to
+         2. Enter keyword to be added
+      1. E -- request to edit a paper
+         1. Enter the paper_id of the paper to be edited
+         2. Describe the changes to be made
+   1. Z -- to quit
+
+
+Libraries and Software:
+* MySQL -- to run .sql scripts and house the data and schema
+* Java -- to run the jar file within the command line
+* IntelliJ - IDE used to create the project
+   * The program can also be run by opening up the “db” folder in IntelliJ which contains an IntelliJ project. 
+Technology Download Pages:
+* https://dev.mysql.com/downloads/connector/j/
+   * Used to connect Java to MySQL
